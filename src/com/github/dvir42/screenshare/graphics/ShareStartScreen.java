@@ -59,8 +59,4 @@ public class ShareStartScreen extends JFrame implements ActionListener {
 		return Integer.parseInt(port.getText());
 	}
 
-	public static void main(String[] args) {
-		new ShareStartScreen();
-	}
-
 }
