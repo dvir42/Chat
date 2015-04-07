@@ -8,6 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+import com.github.dvir42.screenshare.Connect;
+
 public class ConnectStartScreen extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 7064970744253770550L;
@@ -34,7 +36,7 @@ public class ConnectStartScreen extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		new Connect(ip.getText(), Integer.parseInt(port.getText()));
 	}
 
 }

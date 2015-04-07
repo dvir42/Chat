@@ -49,6 +49,7 @@ public class ShareStartScreen extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		ready = true;
+		dispose();
 	}
 
 	public boolean isReady() {
