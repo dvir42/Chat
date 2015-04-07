@@ -10,6 +10,7 @@ import com.github.dvir42.screenshare.p2p.exceptions.UnhandledMessageTypeExceptio
 import com.github.dvir42.screenshare.p2p.handlers.Handler;
 import com.github.dvir42.screenshare.p2p.handlers.Ping;
 import com.github.dvir42.screenshare.p2p.handlers.SendString;
+import com.github.dvir42.screenshare.p2p.utils.NetworkUtils;
 
 public class Peer {
 
@@ -31,11 +32,9 @@ public class Peer {
 		alive = true;
 	}
 
-	@SuppressWarnings("resource")
 	public Peer(int port) throws UnknownHostException, IOException {
 		this.port = port;
-		ip = new Socket("212.179.180.101", 80).getLocalAddress()
-				.getHostAddress();
+		ip = NetworkUtils.getLocalIP();
 		id = getID(this.port, this.ip);
 		peers = new ArrayList<Peer>();
 		alive = true;
