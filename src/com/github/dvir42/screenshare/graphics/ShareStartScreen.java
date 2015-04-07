@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+import com.github.dvir42.screenshare.p2p.Peer;
+import com.github.dvir42.screenshare.p2p.handlers.ShareScreen;
 import com.github.dvir42.screenshare.p2p.utils.NetworkUtils;
 
 public class ShareStartScreen extends JFrame implements ActionListener {
@@ -20,10 +22,7 @@ public class ShareStartScreen extends JFrame implements ActionListener {
 	private final JTextField port;
 	private final JButton share;
 
-	private boolean ready;
-
 	public ShareStartScreen() {
-		ready = false;
 		setSize(400, 200);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new FlowLayout());
@@ -48,16 +47,14 @@ public class ShareStartScreen extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		ready = true;
 		dispose();
-	}
-
-	public boolean isReady() {
-		return ready;
-	}
-
-	public int getPort() {
-		return Integer.parseInt(port.getText());
+		Peer peer = new Peer(Integer.parseInt(port.getText()), ip.getText());
+		Peer.addHandler(new ShareScreen());
+		try {
+			peer.listen();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 }
