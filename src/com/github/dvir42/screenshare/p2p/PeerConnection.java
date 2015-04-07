@@ -1,5 +1,7 @@
 package com.github.dvir42.screenshare.p2p;
 
+import java.awt.Image;
+import java.awt.image.RenderedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -8,10 +10,13 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import javax.imageio.ImageIO;
+
 import com.github.dvir42.screenshare.p2p.exceptions.UnhandledMessageTypeException;
 import com.github.dvir42.screenshare.p2p.handlers.Acknowledge;
 import com.github.dvir42.screenshare.p2p.handlers.Handler;
 import com.github.dvir42.screenshare.p2p.handlers.Ping;
+import com.github.dvir42.screenshare.p2p.handlers.SendString;
 import com.github.dvir42.screenshare.p2p.utils.ArrayUtils;
 
 public class PeerConnection {
@@ -50,6 +55,12 @@ public class PeerConnection {
 		out.flush();
 	}
 
+	public void sendImage(Image img, String peerID) throws IOException {
+		sendMessage(new Message(new SendString(),
+				new String[] { "img", peerID }));
+		ImageIO.write((RenderedImage) img, "bmp", socket.getOutputStream());
+	}
+
 	public Message receiveMessage() throws IOException,
 			UnhandledMessageTypeException {
 		String msg = in.readLine();
@@ -62,6 +73,10 @@ public class PeerConnection {
 			throw new UnhandledMessageTypeException();
 		String[] data = ArrayUtils.stringToArray(dataStr);
 		return new Message(handler, data);
+	}
+
+	public Image receiveImage() throws IOException {
+		return ImageIO.read(socket.getInputStream());
 	}
 
 	public void close() throws IOException {

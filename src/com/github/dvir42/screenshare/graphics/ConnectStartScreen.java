@@ -45,6 +45,7 @@ public class ConnectStartScreen extends JFrame implements ActionListener {
 			e1.printStackTrace();
 		}
 		dispose();
+		new Screen();
 	}
 
 }
