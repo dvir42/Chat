@@ -1,4 +1,4 @@
-package com.github.dvir42.graphics;
+package com.github.dvir42.screenshare.graphics;
 
 import java.awt.AWTException;
 import java.awt.Graphics;

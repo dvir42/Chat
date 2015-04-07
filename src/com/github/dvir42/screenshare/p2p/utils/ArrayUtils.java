@@ -1,4 +1,4 @@
-package com.github.dvir42.p2p.utils;
+package com.github.dvir42.screenshare.p2p.utils;
 
 import java.util.ArrayList;
 

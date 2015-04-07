@@ -1,4 +1,4 @@
-package com.github.dvir42.p2p;
+package com.github.dvir42.screenshare.p2p;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -8,11 +8,11 @@ import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-import com.github.dvir42.p2p.exceptions.UnhandledMessageTypeException;
-import com.github.dvir42.p2p.handlers.Acknowledge;
-import com.github.dvir42.p2p.handlers.Handler;
-import com.github.dvir42.p2p.handlers.Ping;
-import com.github.dvir42.p2p.utils.ArrayUtils;
+import com.github.dvir42.screenshare.p2p.exceptions.UnhandledMessageTypeException;
+import com.github.dvir42.screenshare.p2p.handlers.Acknowledge;
+import com.github.dvir42.screenshare.p2p.handlers.Handler;
+import com.github.dvir42.screenshare.p2p.handlers.Ping;
+import com.github.dvir42.screenshare.p2p.utils.ArrayUtils;
 
 public class PeerConnection {
 
