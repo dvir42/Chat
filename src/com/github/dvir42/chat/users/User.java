@@ -17,6 +17,7 @@ public class User {
 	public User(String userName) throws UnknownHostException, IOException {
 		this.userName = userName;
 		peer = new Peer(NetworkUtils.getAvailablePort());
+		Users.users.add(new Simple(userName, peer.getPort(), peer.getIP()));
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -40,6 +41,30 @@ public class User {
 
 	public String getUserName() {
 		return userName;
+	}
+
+	public class Simple {
+		private final String userName;
+		private final int listeningPort;
+		private final String ip;
+
+		public Simple(String userName, int listeningPort, String ip) {
+			this.userName = userName;
+			this.listeningPort = listeningPort;
+			this.ip = ip;
+		}
+
+		public String getUserName() {
+			return userName;
+		}
+
+		public int getListeningPort() {
+			return listeningPort;
+		}
+
+		public String getIP() {
+			return ip;
+		}
 	}
 
 }
