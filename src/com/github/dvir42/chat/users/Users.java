@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 public class Users {
 
-	public static final ArrayList<User.Simple> users = new ArrayList<>();
+	public static final ArrayList<User> users = new ArrayList<>();
 
 }
