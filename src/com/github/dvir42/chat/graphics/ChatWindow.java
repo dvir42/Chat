@@ -8,15 +8,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
+import com.github.dvir42.chat.users.ChatHistory;
+import com.github.dvir42.chat.users.User;
+
 public class ChatWindow extends JPanel {
 
 	private static final long serialVersionUID = 2800344890499501800L;
 
 	private final JTextField input;
 	private final JTextPane chatHistory;
-	private String sent;
+	private final ChatHistory history;
 
-	public ChatWindow() {
+	public ChatWindow(final User me, final User you) {
+		history = new ChatHistory(me, you);
 		JFrame frame = new JFrame("chat");
 		frame.setSize(600, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,19 +28,24 @@ public class ChatWindow extends JPanel {
 		frame.add(this);
 		input = new JTextField();
 		chatHistory = new JTextPane();
+		chatHistory.setEditable(false);
 		add(input);
 		add(chatHistory);
 		addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER)
-					sent = input.getText();
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					me.send(you, input.getText());
+					input.setText("");
+				}
 			}
 		});
-	}
-
-	public String getSent() {
-		return sent;
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				chatHistory.setText(history.getChatHistory());
+			}
+		}).start();
 	}
 
 }
