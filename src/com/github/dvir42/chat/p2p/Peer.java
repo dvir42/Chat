@@ -1,4 +1,4 @@
-package com.github.dvir42.screenshare.p2p;
+package com.github.dvir42.chat.p2p;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -6,11 +6,11 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 
-import com.github.dvir42.screenshare.p2p.exceptions.UnhandledMessageTypeException;
-import com.github.dvir42.screenshare.p2p.handlers.Handler;
-import com.github.dvir42.screenshare.p2p.handlers.Ping;
-import com.github.dvir42.screenshare.p2p.handlers.SendString;
-import com.github.dvir42.screenshare.p2p.utils.NetworkUtils;
+import com.github.dvir42.chat.p2p.exceptions.UnhandledMessageTypeException;
+import com.github.dvir42.chat.p2p.handlers.Handler;
+import com.github.dvir42.chat.p2p.handlers.Ping;
+import com.github.dvir42.chat.p2p.handlers.SendString;
+import com.github.dvir42.chat.p2p.utils.NetworkUtils;
 
 public class Peer {
 

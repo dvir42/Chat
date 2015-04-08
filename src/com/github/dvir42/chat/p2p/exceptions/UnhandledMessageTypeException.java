@@ -1,4 +1,4 @@
-package com.github.dvir42.screenshare.p2p.exceptions;
+package com.github.dvir42.chat.p2p.exceptions;
 
 public class UnhandledMessageTypeException extends Exception {
 

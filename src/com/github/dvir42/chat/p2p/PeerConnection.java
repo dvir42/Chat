@@ -1,4 +1,4 @@
-package com.github.dvir42.screenshare.p2p;
+package com.github.dvir42.chat.p2p;
 
 import java.awt.Image;
 import java.awt.image.RenderedImage;
@@ -12,12 +12,12 @@ import java.net.UnknownHostException;
 
 import javax.imageio.ImageIO;
 
-import com.github.dvir42.screenshare.p2p.exceptions.UnhandledMessageTypeException;
-import com.github.dvir42.screenshare.p2p.handlers.Acknowledge;
-import com.github.dvir42.screenshare.p2p.handlers.Handler;
-import com.github.dvir42.screenshare.p2p.handlers.Ping;
-import com.github.dvir42.screenshare.p2p.handlers.SendString;
-import com.github.dvir42.screenshare.p2p.utils.ArrayUtils;
+import com.github.dvir42.chat.p2p.exceptions.UnhandledMessageTypeException;
+import com.github.dvir42.chat.p2p.handlers.Acknowledge;
+import com.github.dvir42.chat.p2p.handlers.Handler;
+import com.github.dvir42.chat.p2p.handlers.Ping;
+import com.github.dvir42.chat.p2p.handlers.SendString;
+import com.github.dvir42.chat.p2p.utils.ArrayUtils;
 
 public class PeerConnection {
 

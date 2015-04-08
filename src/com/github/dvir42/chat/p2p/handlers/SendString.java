@@ -1,10 +1,10 @@
-package com.github.dvir42.screenshare.p2p.handlers;
+package com.github.dvir42.chat.p2p.handlers;
 
 import java.io.IOException;
 
-import com.github.dvir42.screenshare.p2p.Message;
-import com.github.dvir42.screenshare.p2p.PeerConnection;
-import com.github.dvir42.screenshare.p2p.utils.ArrayUtils;
+import com.github.dvir42.chat.p2p.Message;
+import com.github.dvir42.chat.p2p.PeerConnection;
+import com.github.dvir42.chat.p2p.utils.ArrayUtils;
 
 public class SendString implements Handler {
 

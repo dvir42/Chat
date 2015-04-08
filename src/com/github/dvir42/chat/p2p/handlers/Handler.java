@@ -1,8 +1,8 @@
-package com.github.dvir42.screenshare.p2p.handlers;
+package com.github.dvir42.chat.p2p.handlers;
 
 import java.io.IOException;
 
-import com.github.dvir42.screenshare.p2p.PeerConnection;
+import com.github.dvir42.chat.p2p.PeerConnection;
 
 public interface Handler {
 

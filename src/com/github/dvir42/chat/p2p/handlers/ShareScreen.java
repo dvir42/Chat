@@ -1,4 +1,4 @@
-package com.github.dvir42.screenshare.p2p.handlers;
+package com.github.dvir42.chat.p2p.handlers;
 
 import java.awt.AWTException;
 import java.awt.HeadlessException;
@@ -8,7 +8,7 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-import com.github.dvir42.screenshare.p2p.PeerConnection;
+import com.github.dvir42.chat.p2p.PeerConnection;
 
 public class ShareScreen implements Handler {
 

@@ -1,6 +1,6 @@
-package com.github.dvir42.screenshare.p2p;
+package com.github.dvir42.chat.p2p;
 
-import com.github.dvir42.screenshare.p2p.handlers.Handler;
+import com.github.dvir42.chat.p2p.handlers.Handler;
 
 public class Message {
 
